@@ -16,8 +16,11 @@
     <th>Publisher</th>
   </tr>
   <tr th:each="author: ${authors}">
-    <td th:text="${author.id}">123</td>
     <td th:text="${author.id}"></td>
+    <td th:text="${author.firstName}"></td>
+    <td th:text="${author.lastNanem}"></td>
+    <td th:each="book: ${author.books}", th:text="${book.title}"></td>
+    <td th:each="book: ${author.books}", th:text="${book.publisher.name}"></td>
   </tr>
 </table>
 
